@@ -28,7 +28,7 @@ module.exports = function(grunt) {
                 options: { livereload: 10000 }
             },
             js: {
-                files: ['gruntfile.js', 'app/js/*'],
+                files: ['gruntfile.js', 'app/js/*', 'app/models/*'],
                 tasks: ['uglify'],
                 options: { livereload: 10000 }
             },
