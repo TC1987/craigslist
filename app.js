@@ -25,7 +25,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 if (app.locals.dev) app.use(logger('dev'));
 
 app.get('/', function(req, res, next) {
-    res.send('Hello World');
+    res.render('index');
+})
+
+app.post('/register', function(req, res, next) {
+
 })
 
 // Create error object and set status.

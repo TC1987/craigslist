@@ -12,6 +12,14 @@ module.exports = function(grunt) {
             }
         },
 
+        uglify: {
+            my_target: {
+                files: {
+                    'public/js/script.min.js': ['app/models/script.js']
+                }
+            }
+        },
+
         // Watch for any updates and reload the page.
         watch: {
             css: {
@@ -35,8 +43,9 @@ module.exports = function(grunt) {
     // Load tasks from node_modules.
     grunt.loadNpmTasks('grunt-contrib-stylus');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 
     // Commands
-    grunt.registerTask('default', ['stylus', 'watch']);
+    grunt.registerTask('default', ['uglify', 'stylus', 'watch']);
     grunt.registerTask('publish', ['stylus']);
 };
